@@ -3,7 +3,7 @@ import Hero from './components/Hero'
 import About from './components/About'
 import Experience from './components/Experience'
 import Projects from './components/Projects'
-import Creative from './components/Creative'
+import Leadership from './components/Leadership'
 import Contact from './components/Contact'
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
       <About />
       <Experience />
       <Projects />
-      <Creative />
+      <Leadership />
       <Contact />
     </div>
   )
