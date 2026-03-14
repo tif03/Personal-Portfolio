@@ -1,4 +1,12 @@
-export const experiences = [
+interface Experience {
+    company: string
+    role: string
+    date: string
+    location: string
+    bullets: string[]
+}
+
+export const experiences: Experience[] = [
     {
         company : 'John Hancock',
         role : 'Software Engineer Intern',
