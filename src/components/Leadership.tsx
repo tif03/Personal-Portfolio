@@ -1,10 +1,10 @@
-function Creative() {
+function Leadership() {
   return (
-    <section id="creative">
-      <h2>Creative</h2>
+    <section id="leadership">
+      <h2>Leadership</h2>
       <p>Coming soon...</p>
     </section>
   )
 }
 
-export default Creative
+export default Leadership
