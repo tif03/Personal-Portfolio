@@ -5,12 +5,27 @@ function Contact() {
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
   const [submitted, setSubmitted] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.MouseEvent<HTMLButtonElement>) {
     e.preventDefault()
     // backend connection
-    console.log({ name, email, message })
-    setSubmitted(true)
+
+    const res = await fetch('http://localhost:3000/contact', {
+      method: 'POST',
+      headers: {'Content-Type' : 'application/json'},
+      body: JSON.stringify({name, email, message})
+    })
+
+    const data = await res.json()
+
+    if (!res.ok){
+      setError(data.error)
+    } else {
+      setSubmitted(true)
+      setError(null)
+    }
+
   }
 
   if (submitted) return (
