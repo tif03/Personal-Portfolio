@@ -24,17 +24,19 @@ function Places() {
       })
   }, [])
 
-  if (loading) return <section id="places"><p>Loading...</p></section>
-  if (error) return <section id="places"><p>{error}</p></section>
+  if (loading) return <section id="places" className="py-24 px-8 max-w-3xl mx-auto"><p>Loading...</p></section>
+  if (error) return <section id="places" className="py-24 px-8 max-w-3xl mx-auto"><p>{error}</p></section>
 
   return (
-    <section id="places">
-      <h2>Places</h2>
-      {places.map(place => (
-        <div key={place.id}>
-          <p>{place.city}, {place.country}</p>
-        </div>
-      ))}
+    <section id="places" className="py-24 px-8 max-w-3xl mx-auto">
+      <h2 className="text-5xl font-bold mb-12" style={{fontFamily: 'DM Serif Display'}}>Places</h2>
+      <div className="flex flex-wrap gap-3">
+        {places.map(place => (
+          <div key={place.id} className="bg-white border border-pink-light rounded-full px-4 py-2 text-sm text-blue-dark shadow-sm">
+            {place.city}, {place.country}
+          </div>
+        ))}
+      </div>
     </section>
   )
 }
