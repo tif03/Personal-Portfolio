@@ -22,6 +22,7 @@ function Places() {
         setError('Failed to load places')
         setLoading(false)
       })
+      console.log(import.meta.env.VITE_API_URL)
   }, [])
 
   if (loading) return <section id="places" className="py-24 px-8 max-w-3xl mx-auto"><p>Loading...</p></section>
