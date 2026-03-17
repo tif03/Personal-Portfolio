@@ -7,6 +7,7 @@ function Navbar() {
         <a href="#experience" className="text-sm hover:text-pink-mid transition-colors">EXPERIENCE</a>
         <a href="#projects" className="text-sm hover:text-pink-mid transition-colors">PROJECTS</a>
         <a href="#leadership" className="text-sm hover:text-pink-mid transition-colors">LEADERSHIP</a>
+        <a href="#dance" className="text-sm hover:text-pink-mid transition-colors">DANCE</a>
         <a href="#places" className="text-sm hover:text-pink-mid transition-colors">PLACES</a>
         <a href="#contact" className="text-sm hover:text-pink-mid transition-colors">CONTACT</a>
       </div>

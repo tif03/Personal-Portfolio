@@ -37,7 +37,7 @@ function Contact() {
           setEmail('')
           setMessage('')
         }}
-        className="px-6 py-2 bg-pink-mid text-white rounded-full text-sm hover:bg-blue-dark transition-colors"
+        className="px-6 py-2 bg-pink-mid text-white rounded-full text-sm hover:bg-blue-light transition-colors"
       >
         Send another message
       </button>
@@ -72,7 +72,7 @@ function Contact() {
         />
         <button
           onClick={handleSubmit}
-          className="px-6 py-3 bg-pink-mid text-white rounded-full text-sm hover:bg-blue-dark transition-colors"
+          className="px-6 py-3 bg-pink-mid text-white rounded-full text-sm hover:bg-blue-light transition-colors"
         >
           Send
         </button>
