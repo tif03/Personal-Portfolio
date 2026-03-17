@@ -4,6 +4,7 @@ const db = require('../db')
 const { Resend } = require('resend')
 
 const resend = new Resend(process.env.RESEND_API_KEY)
+console.log('RESEND KEY:', process.env.RESEND_API_KEY ? 'found' : 'NOT FOUND')
 
 router.post('/', async (req, res) => {
   try {
