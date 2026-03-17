@@ -3,7 +3,6 @@ const router = express.Router()
 const db = require('../db')
 
 const nodemailer = require('nodemailer')
-require('dotenv').config()
 
 // Mail connection
 const transporter = nodemailer.createTransport({
