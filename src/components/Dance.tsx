@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { danceVideos } from '../data/dance'
-import type { DanceVideo } from '../data/dance'
 
 function Dance() {
   const [activeIndex, setActiveIndex] = useState(0)
