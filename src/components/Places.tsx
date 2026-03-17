@@ -12,7 +12,7 @@ function Places() {
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    fetch(import.meta.env.VITE_API_URL)
+    fetch(`${import.meta.env.VITE_API_URL}/places`)
       .then(res => res.json())
       .then(data => {
         setPlaces(data)

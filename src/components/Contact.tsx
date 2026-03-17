@@ -10,7 +10,7 @@ function Contact() {
   async function handleSubmit(e: React.MouseEvent<HTMLButtonElement>) {
     e.preventDefault()
 
-    const res = await fetch(import.meta.env.VITE_API_URL, {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/contact`, {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({name, email, message})
