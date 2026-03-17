@@ -5,7 +5,11 @@ const contactRoutes = require('./routes/contact')
 const placesRoutes = require('./routes/places')
 
 const app = express()
-app.use(cors())
+
+app.use(cors({
+  origin: ['https://tiffany-yu-portfolio.vercel.app', 'http://localhost:5173']
+}))
+
 app.use(express.json())
 
 app.use('/contact', contactRoutes)
