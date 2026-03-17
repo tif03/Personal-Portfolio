@@ -12,7 +12,7 @@ function Places() {
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    fetch('http://localhost:3000/places')
+    fetch(import.meta.env.VITE_API_URL)
       .then(res => res.json())
       .then(data => {
         setPlaces(data)
