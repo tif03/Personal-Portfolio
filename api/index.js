@@ -13,10 +13,10 @@ app.use(cors({
     } else {
       callback(new Error('Not allowed by CORS'))
     }
-  }
+  },
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type']
 }))
-
-app.options('*', cors())
 
 app.use(express.json())
 
