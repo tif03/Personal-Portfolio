@@ -41,7 +41,7 @@ function Hero() {
               <p className="text-s text-blue-dark mt-2">.𖥔 ݁ ˖𓂃.☘︎ ܁˖༘⋆</p>
         </div>
 
-        <div className="relative flex-shrink-0 w-96 h-[500px]">
+        <div className="relative flex-shrink-0 w-[380px]">
           <img
             src="/images/Hero/profile-pic.jpg"
             alt="Tiffany Yu"
