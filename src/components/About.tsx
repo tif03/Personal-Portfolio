@@ -1,7 +1,90 @@
+function Polaroid({ src, caption, style }: {
+  src: string
+  caption?: string
+  style?: React.CSSProperties
+}) {
+  return (
+    <div
+      className="absolute bg-white p-3 pb-8 shadow-md w-[180px]
+                transition-all duration-200
+                hover:-translate-y-2 hover:scale-105 hover:rotate-0 hover:shadow-xl"
+      style={{
+        transform: 'rotate(-4deg)',
+        ...style
+      }}
+    >
+      <img
+        src={src}
+        className="w-full h-[140px] object-cover mb-2"
+      />
+      {caption && (
+        <p className="text-[11px] text-center text-gray-500">
+          {caption}
+        </p>
+      )}
+    </div>
+  )
+}
+
 function About() {
   return (
     <section id="about" className="relative px-16 py-24 flex justify-center">
       <div className="relative w-[700px]">
+
+      <Polaroid
+        src="/images/About/picys/fearless.jpg"
+        caption="Fearless by Le Sserafim Cover"
+        style={{
+          top: '40%',
+          right: '-160px',
+          transform: 'rotate(8deg)',
+          zIndex: 20
+        }}
+      />
+
+      <Polaroid
+        src="/images/About/picys/hawaii.jpg"
+        caption="Hawaii 𖦹˙༄.°"
+        style={{
+          bottom: '-80px',
+          right: '-140px',
+          transform: 'rotate(-10deg)',
+          zIndex: 20
+        }}
+      />
+
+      <Polaroid
+        src="/images/About/picys/chinese.jpg"
+        caption="Chinese Folk Dance"
+        style={{
+          bottom: '-80px',
+          left: '-140px',
+          transform: 'rotate(-10deg)',
+          zIndex: 20
+        }}
+      />
+
+      <Polaroid
+        src="/images/About/picys/mexhoshi.jpg"
+        caption="I ♥ Seventeen"
+        style={{
+          top : '290px',
+          left: '-160px',
+          transform: 'rotate(5deg)',
+          zIndex: 20
+        }}
+      />
+
+      <Polaroid
+        src="/images/About/picys/mextoshi.jpg"
+        caption="Me and My dog Toshi"
+        style={{
+          top: '-60px',
+          right: '-120px',
+          transform: 'rotate(-6deg)',
+          zIndex: 20
+        }}
+      />
       
       <div 
         className="absolute bg-blue-light shadow-md"
@@ -57,7 +140,6 @@ function About() {
         </div>
       </div>
     </div>
-
     </section>
 
     
