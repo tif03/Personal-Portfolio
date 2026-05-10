@@ -1,3 +1,5 @@
+import Spotify from './Spotify'
+
 function Polaroid({ src, caption, style }: {
   src: string
   caption?: string
@@ -38,17 +40,6 @@ function About() {
           top: '40%',
           right: '-160px',
           transform: 'rotate(8deg)',
-          zIndex: 20
-        }}
-      />
-
-      <Polaroid
-        src="/images/About/picys/hawaii.jpg"
-        caption="Hawaii 𖦹˙༄.°"
-        style={{
-          bottom: '-80px',
-          right: '-140px',
-          transform: 'rotate(-10deg)',
           zIndex: 20
         }}
       />
@@ -139,10 +130,29 @@ function About() {
           </p>
         </div>
       </div>
+
+      <div 
+        className="absolute -bottom-40 -right-10 z-30"
+      >
+        <Spotify />
+        <img 
+          src="/images/About/spotify/earphones.PNG"
+          alt="earphones"
+          className="absolute w-90"
+          style={{ 
+            transform: 'rotate(-40deg)',
+            top : '-40px',
+            left : '330px'
+          }}
+        />
+      </div>
+      
     </div>
     </section>
 
     
+    
+
   )
 }
 

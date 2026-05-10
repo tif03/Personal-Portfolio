@@ -31,7 +31,14 @@ function Contact() {
 
   const paperCard = (children: React.ReactNode) => (
     <section id='contact' className="py-24 px-8 flex flex-col items-center">
-      <div className="w-full max-w-lg">
+
+      <img 
+        src="/images/Contact/40.png" 
+        alt="Flower Divider" 
+        className="w-full -mb-0 relative z-0"
+      />
+
+      <div className="w-full max-w-lg relative z-10">
         <div className="flex items-baseline gap-3 mb-2">
           <h2 className="text-5xl font-bold" style={{ fontFamily: 'DM Serif Display' }}>Contact</h2>
         </div>
