@@ -20,7 +20,7 @@ router.get('/login', (req, res) => {
 })
 
 // one time use — called automatically after login, gives you your refresh token
-router.get('/callback', async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const code = req.query.code
 
