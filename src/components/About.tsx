@@ -116,7 +116,7 @@ function About() {
         <h2 className="text-5xl font-bold mb-8" style={{fontFamily: 'DM Serif Display'}}>About Me</h2>
         <div className="flex flex-col gap-6 text-gray-600 leading-relaxed">
           <p>
-            I am a Computer Science Master's student at <strong className="text-blue-dark font-semibold">Cornell Tech</strong> in New York City, where I am focusing on the intersection of <strong className="text-blue-dark font-semibold">AI/ML and business</strong>, exploring how emerging technology can drive real world impact across industries. Through the entrepreneurial nature of the program, I'm gaining hands-on experience thinking like a founder, from customer research and product strategy to pitching and iterating fast.
+            I am a Master in Computer Science graduate from <strong className="text-blue-dark font-semibold">Cornell Tech</strong> in New York City, where I am focusing on the intersection of <strong className="text-blue-dark font-semibold">AI/ML and business</strong>, exploring how emerging technology can drive real world impact across industries. Through the entrepreneurial nature of the program, I'm gaining hands-on experience thinking like a founder, from customer research and product strategy to pitching and iterating fast.
           </p>
           <p>
             I got my Bachelor's degree at <strong className="text-blue-dark font-semibold">Boston University</strong>, where I studied <strong className="text-blue-dark font-semibold">Computer Science</strong> with a minor in Business Administration and Management.
@@ -132,7 +132,7 @@ function About() {
       </div>
 
       <div 
-        className="absolute -bottom-40 -right-10 z-30"
+        className="absolute -bottom-50 -right-48 z-30"
       >
         <Spotify />
         <img 
@@ -141,8 +141,8 @@ function About() {
           className="absolute w-90"
           style={{ 
             transform: 'rotate(-40deg)',
-            top : '-40px',
-            left : '330px'
+            top : '50px',
+            left : '400px'
           }}
         />
       </div>

@@ -22,40 +22,46 @@ function Spotify() {
     <a 
       href={nowPlaying?.song_url || '#'} 
       target="_blank"
-      className="relative block w-[400px]"
+      className="relative block w-[500px] leading-none"
     >
       {/* iPod background */}
       <img src="/images/About/spotify/music_ipod.PNG" alt="iPod" className="w-full" />
       
-      {/* Album art inside the screen */}
-      <div className="absolute flex items-center gap-2 p-2 overflow-hidden"
-            style={{ 
-                top: '12%', 
-                left: '8%', 
-                width: '42%', 
-                height: '75%'
-            }}>
-        {nowPlaying?.playing && nowPlaying.album_art ? (
+      {/* Now playing label — inside iPod, above screen */}
+      <p 
+        className="absolute text-xs text-gray-500 tracking-widest uppercase"
+        style={{ top: '28%', left: '10%' }}
+      >
+        {nowPlaying?.playing ? '♫ now playing' : '♫ current fave'}
+      </p>
+
+      {/* Screen content */}
+      <div 
+        className="absolute flex items-center gap-3 overflow-hidden px-2"
+        style={{ top: '18%', left: '8%', width: '42%', height: '65%' }}
+      >
+        {/* Album art */}
+        {nowPlaying?.album_art ? (
           <img 
             src={nowPlaying.album_art} 
             alt="album art" 
-            className="w-20 h-20 object-cover flex-shrink-0"
+            className="w-14 h-14 object-cover flex-shrink-0 rounded-sm"
           />
         ) : (
-          <div className="w-full h-full bg-gray-100 flex items-center justify-center">
-            <span className="text-2xl">🎵</span>
+          <div className="w-14 h-14 bg-gray-100 flex items-center justify-center flex-shrink-0 rounded-sm">
+            <span className="text-xl">🎵</span>
           </div>
         )}
-      </div>
 
-      {/* Track info */}
-      <div className="absolute bottom-24 left-2 right-18 text-center">
-        <p className="text-xs font-bold text-pink-mid truncate">
-          {nowPlaying?.playing ? nowPlaying.track : 'Not playing'}
-        </p>
-        <p className="text-xs text-gray-500 truncate">
-          {nowPlaying?.playing ? nowPlaying.artist : ''}
-        </p>
+        {/* Track info */}
+        <div className="flex flex-col gap-1 overflow-hidden min-w-0">
+          <p className="text-xs font-bold text-gray-800 truncate">
+            {nowPlaying?.track || '—'}
+          </p>
+          <p className="text-xs text-gray-500 truncate">
+            {nowPlaying?.artist || ''}
+          </p>
+        </div>
       </div>
     </a>
   )

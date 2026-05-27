@@ -49,7 +49,6 @@ router.get('/', async (req, res) => {
 // called by your React frontend to get now playing
 router.get('/now-playing', async (req, res) => {
   try {
-    // first get a fresh access token using the refresh token
     const tokenResponse = await fetch('https://accounts.spotify.com/api/token', {
       method: 'POST',
       headers: {
@@ -64,23 +63,40 @@ router.get('/now-playing', async (req, res) => {
 
     const { access_token } = await tokenResponse.json()
 
-    // then use it to get currently playing
+    // try currently playing first
     const nowPlayingResponse = await fetch('https://api.spotify.com/v1/me/player/currently-playing', {
       headers: { 'Authorization': `Bearer ${access_token}` }
     })
 
-    if (nowPlayingResponse.status === 204) {
-      return res.json({ playing: false })
+    if (nowPlayingResponse.status === 200) {
+      const data = await nowPlayingResponse.json()
+      if (data.item) {
+        return res.json({
+          playing: true,
+          track: data.item.name,
+          artist: data.item.artists[0]?.name,
+          album_art: data.item.album?.images[0]?.url,
+          song_url: data.item.external_urls?.spotify
+        })
+      }
     }
 
-    const data = await nowPlayingResponse.json()
-    res.json({
-      playing: true,
-      track: data.item?.name,
-      artist: data.item?.artists[0]?.name,
-      album_art: data.item?.album?.images[0]?.url,
-      song_url: data.item?.external_urls?.spotify
+    // fallback to top track
+    const topResponse = await fetch('https://api.spotify.com/v1/me/top/tracks?limit=1&time_range=short_term', {
+      headers: { 'Authorization': `Bearer ${access_token}` }
     })
+
+    const topData = await topResponse.json()
+    const topTrack = topData.items?.[0]
+
+    res.json({
+      playing: false,
+      track: topTrack?.name,
+      artist: topTrack?.artists[0]?.name,
+      album_art: topTrack?.album?.images[0]?.url,
+      song_url: topTrack?.external_urls?.spotify
+    })
+
   } catch (err) {
     console.error('Spotify now playing error:', err)
     res.status(500).json({ error: 'Something went wrong' })
