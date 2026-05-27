@@ -12,3 +12,31 @@ h1, h2, h3 {
 html {
   scroll-behavior: smooth;
 }
+
+/* ── cursor sparkle trail ── */
+.cursor-sparkle {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  animation: sparkle-float 0.75s ease-out forwards;
+  user-select: none;
+  line-height: 1;
+}
+
+@keyframes sparkle-float {
+  0%   { opacity: 1;   transform: translate(-50%, -50%) translate(0px, 0px) scale(1); }
+  100% { opacity: 0;   transform: translate(-50%, -50%) translate(var(--dx), var(--dy)) scale(0.2); }
+}
+
+/* ── scroll reveal ── */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
