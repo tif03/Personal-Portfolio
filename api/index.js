@@ -24,6 +24,5 @@ app.use(express.json())
 app.use('/contact', contactRoutes)
 //* app.use('/places',placesRoutes) *//
 app.use('/spotify', spotifyRoutes)
-app.use('/callback', spotifyRoutes)
 
 app.listen(3000, () => console.log('Server running on port 3000'))
